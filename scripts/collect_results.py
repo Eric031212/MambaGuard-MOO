@@ -20,6 +20,7 @@ PAPER = {
     "w/o MOO (paper Table II)": ("0.0562 ± 0.004", "0.4284 ± 0.003", "0.6429 ± 0.005", "0.5217 ± 0.005"),
     "w/o contrastive learning (paper Table II)": ("0.0511 ± 0.005", "0.4724 ± 0.004", "0.6793 ± 0.004", "0.5045 ± 0.003"),
 }
+DISPLAY = {"Retain": "RETAIN", "Leap": "LEAP"}
 NAMES = {"full": "MambaGuard-MOO (full)", "no_moo": "w/o MOO", "no_cl": "w/o contrastive learning",
          "no_cssm": "w/o DDI/EHR-conditioned SSM", "base": "Mamba backbone + L_base only"}
 
@@ -59,8 +60,10 @@ def official_baselines():
 def main_table():
     res, summary = load("outputs/main/*/seed*/results.json"), {}
     lines = [HEAD]
-    for name, runs in official_baselines().items():
-        lines.append(f"| {name} (official code, 1 run, bootstrap std) | "
+    official = official_baselines()
+    for name in [m for m in ("Retain", "Leap", "GAMENet", "SafeDrug") if m in official]:
+        runs = official[name]
+        lines.append(f"| {DISPLAY.get(name, name)} (official code, 1 run, bootstrap std) | "
                      + " | ".join(f"{runs[k][0]:.4f} ± {runs[k][1]:.4f}" for k in KEYS) + " |")
         summary[f"official_{name}"] = runs
     for name in ("base", "no_cssm", "no_cl", "no_moo", "full"):

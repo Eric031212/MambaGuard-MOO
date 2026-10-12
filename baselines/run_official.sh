@@ -3,6 +3,7 @@
 # on the very same preprocessed MIMIC-III files and split, then tests the epoch with the best validation
 # Jaccard (the repository's own selection rule) with its own 10x bootstrap test.
 #   sbatch -J bl_SafeDrug baselines/run_official.sh SafeDrug      (SafeDrug | GAMENet | Retain | Leap)
+#   TEST_ONLY=1 sbatch ... re-runs only the test of an already trained baseline
 #SBATCH -p gpus
 #SBATCH --gres=gpu:1
 #SBATCH -c 2
@@ -25,12 +26,14 @@ cd "$SD/src"
 OUT=$ROOT/outputs/baselines/$MODEL
 mkdir -p "$OUT" saved/$MODEL
 echo "[$(date)] $(hostname) training $MODEL"
-python -u $MODEL.py --cuda 0 2>&1 | tr '\r' '\n' | grep -v "step:" > "$OUT/train.log"
+[ -n "${TEST_ONLY:-}" ] || python -u $MODEL.py --cuda 0 2>&1 | tr '\r' '\n' | grep -v "step:" > "$OUT/train.log"
 # best validation Jaccard, epoch != 0 (same rule as the original scripts)
 BEST=$(ls saved/$MODEL/Epoch_*.model | grep -v "/Epoch_0_" | python -c "
 import sys, re
 fs = [l.strip() for l in sys.stdin]
 print(max(fs, key=lambda f: float(re.search(r'JA_([0-9.]+?)_', f).group(1))))")
 echo "best checkpoint: $BEST" | tee "$OUT/best.txt"
+# Retain.py prepends saved/<model>/ to --resume_path itself; the other scripts take the full path
+[ "$MODEL" = Retain ] && BEST=$(basename "$BEST")
 python -u $MODEL.py --cuda 0 --Test --resume_path "$BEST" 2>&1 | tr '\r' '\n' | grep -v "step:" > "$OUT/test.log"
 tail -3 "$OUT/test.log"

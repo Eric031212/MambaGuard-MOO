@@ -1,0 +1,1 @@
+best checkpoint: saved/GAMENet/Epoch_49_JA_0.5089_DDI_0.08199.model

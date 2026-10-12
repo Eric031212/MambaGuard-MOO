@@ -60,8 +60,11 @@ def tradeoff(summary):
         (d, ds), (j, js) = summary[k]["ddi"], summary[k]["ja"]
         c = BLUE if k == "full" else (INK if k in ("no_moo", "no_cl", "no_cssm", "base") else GRAY)
         ax.errorbar(d, j, xerr=ds, yerr=js, fmt="o", ms=8, color=c, mec="white", mew=1.5, zorder=3)
-        off = {"full": (8, -13), "no_cssm": (8, 5)}.get(k, (6, 4))
-        ax.annotate(LABEL[k], (d, j), xytext=off, textcoords="offset points", fontsize=8.5,
+        if k == "no_cssm":
+            continue  # sits on top of "w/o CL"; both are named by one label below
+        text = "w/o CL, w/o cond. SSM" if k == "no_cl" else LABEL[k]
+        off = {"full": (8, -14), "no_cl": (8, 6), "no_moo": (8, -12), "base": (8, 6)}.get(k, (6, 4))
+        ax.annotate(text, (d, j), xytext=off, textcoords="offset points", fontsize=8.5,
                     color=BLUE if k == "full" else MUTED)
     if "gt_test_ddi" in summary:
         ax.axvline(summary["gt_test_ddi"], color=GRAY, ls="--", lw=1)

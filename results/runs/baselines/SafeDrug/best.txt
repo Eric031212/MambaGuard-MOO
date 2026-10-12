@@ -1,0 +1,1 @@
+best checkpoint: saved/SafeDrug/Epoch_36_TARGET_0.06_JA_0.5154_DDI_0.06012.model

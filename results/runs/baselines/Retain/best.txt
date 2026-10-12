@@ -1,0 +1,1 @@
+best checkpoint: saved/Retain/Epoch_49_JA_0.4864_DDI_0.07931.model
