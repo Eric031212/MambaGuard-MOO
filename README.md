@@ -6,8 +6,6 @@
 
 **Hongtao Xie** · **Shengxin Zhu**
 
-Beijing Normal – Hong Kong Baptist University (BNBU) · Beijing Normal University, Zhuhai
-
 <a href="#-citation"><img src="https://img.shields.io/badge/📝_Cite-MambaGuard--MOO-blue"></a>
 <img src="https://img.shields.io/badge/PyTorch-2.4-EE4C2C?logo=pytorch&logoColor=white">
 <img src="https://img.shields.io/badge/Dataset-MIMIC--III-orange">
