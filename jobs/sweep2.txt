@@ -1,0 +1,9 @@
+python train.py --out outputs/sweep/e15/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6
+python train.py --out outputs/sweep/e15_do5/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --dropout 0.5
+python train.py --out outputs/sweep/e15_wd/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --weight_decay 0.05
+python train.py --out outputs/sweep/e15_do5_wd/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --dropout 0.5 --weight_decay 0.05
+python train.py --out outputs/sweep/e15_d128_do5/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --dim 128 --dropout 0.5
+python train.py --out outputs/sweep/e15_d128_do5_wd/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --dim 128 --dropout 0.5 --weight_decay 0.05
+python train.py --out outputs/sweep/e15_safe1/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --w_safe 1.0
+python train.py --out outputs/sweep/e15_safe1_d128_do5/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --w_safe 1.0 --dim 128 --dropout 0.5
+python train.py --out outputs/sweep/e15_base_d128_do5/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 15 --warmup_epochs 1 --tau_ramp_epochs 1 --stage3_epoch 6 --no_moo --no_cl --no_cssm --dim 128 --dropout 0.5

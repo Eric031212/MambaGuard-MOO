@@ -1,0 +1,25 @@
+python train.py --out outputs/main/full/seed0 --seed 0
+python train.py --out outputs/main/full/seed1 --seed 1
+python train.py --out outputs/main/full/seed2 --seed 2
+python train.py --out outputs/main/full/seed3 --seed 3
+python train.py --out outputs/main/full/seed4 --seed 4
+python train.py --out outputs/main/no_moo/seed0 --seed 0 --no_moo
+python train.py --out outputs/main/no_moo/seed1 --seed 1 --no_moo
+python train.py --out outputs/main/no_moo/seed2 --seed 2 --no_moo
+python train.py --out outputs/main/no_moo/seed3 --seed 3 --no_moo
+python train.py --out outputs/main/no_moo/seed4 --seed 4 --no_moo
+python train.py --out outputs/main/no_cl/seed0 --seed 0 --no_cl
+python train.py --out outputs/main/no_cl/seed1 --seed 1 --no_cl
+python train.py --out outputs/main/no_cl/seed2 --seed 2 --no_cl
+python train.py --out outputs/main/no_cl/seed3 --seed 3 --no_cl
+python train.py --out outputs/main/no_cl/seed4 --seed 4 --no_cl
+python train.py --out outputs/main/no_cssm/seed0 --seed 0 --no_cssm
+python train.py --out outputs/main/no_cssm/seed1 --seed 1 --no_cssm
+python train.py --out outputs/main/no_cssm/seed2 --seed 2 --no_cssm
+python train.py --out outputs/main/no_cssm/seed3 --seed 3 --no_cssm
+python train.py --out outputs/main/no_cssm/seed4 --seed 4 --no_cssm
+python train.py --out outputs/main/base/seed0 --seed 0 --no_moo --no_cl --no_cssm
+python train.py --out outputs/main/base/seed1 --seed 1 --no_moo --no_cl --no_cssm
+python train.py --out outputs/main/base/seed2 --seed 2 --no_moo --no_cl --no_cssm
+python train.py --out outputs/main/base/seed3 --seed 3 --no_moo --no_cl --no_cssm
+python train.py --out outputs/main/base/seed4 --seed 4 --no_moo --no_cl --no_cssm

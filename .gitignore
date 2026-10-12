@@ -1,0 +1,8 @@
+data/
+outputs/
+logs/
+baselines/SafeDrug/
+__pycache__/
+*.pt
+setup_env.log
+.DS_Store

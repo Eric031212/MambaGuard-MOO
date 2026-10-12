@@ -1,0 +1,9 @@
+python train.py --out outputs/sweep/default/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15
+python train.py --out outputs/sweep/safe2/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --w_safe 2
+python train.py --out outputs/sweep/target04/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --ddi_target 0.04 --tau_ddi 0.05
+python train.py --out outputs/sweep/cl05/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --lambda_cl 0.5
+python train.py --out outputs/sweep/lr5e-4/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --lr 5e-4 --epochs 60
+python train.py --out outputs/sweep/rank0/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --w_rank 0 --w_pr 0
+python train.py --out outputs/sweep/eff0/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --w_eff 0
+python train.py --out outputs/sweep/dim128/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --dim 128
+python train.py --out outputs/sweep/base/seed0 --seed 0 --dim 64 --dropout 0.3 --w_safe 0.5 --epochs 40 --warmup_epochs 3 --tau_ramp_epochs 3 --stage3_epoch 15 --no_moo --no_cl --no_cssm
