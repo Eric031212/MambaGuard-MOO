@@ -1,0 +1,1 @@
+best checkpoint: saved/Leap/Epoch_40_JA_0.4483_DDI_0.07344.model

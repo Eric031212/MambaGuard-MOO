@@ -1,6 +1,7 @@
 | Method | DDI Rate ↓ | Jaccard ↑ | PRAUC ↑ | F1 ↑ | Avg. #Med |
 |---|---|---|---|---|---|
 | RETAIN (official code, 1 run, bootstrap std) | 0.0814 ± 0.0016 | 0.4784 ± 0.0050 | 0.7561 ± 0.0050 | 0.6392 ± 0.0045 | 19.8090 ± 0.2338 |
+| LEAP (official code, 1 run, bootstrap std) | 0.0726 ± 0.0008 | 0.4459 ± 0.0026 | 0.6474 ± 0.0039 | 0.6086 ± 0.0026 | 18.9912 ± 0.0632 |
 | GAMENet (official code, 1 run, bootstrap std) | 0.0816 ± 0.0007 | 0.5078 ± 0.0032 | 0.7630 ± 0.0017 | 0.6640 ± 0.0029 | 26.0182 ± 0.1305 |
 | SafeDrug (official code, 1 run, bootstrap std) | 0.0603 ± 0.0005 | 0.5104 ± 0.0020 | 0.7663 ± 0.0029 | 0.6675 ± 0.0020 | 20.4335 ± 0.1532 |
 | Mamba backbone + L_base only (5 seeds) | 0.0832 ± 0.0035 | 0.5302 ± 0.0015 | 0.7754 ± 0.0020 | 0.6845 ± 0.0013 | 21.9575 ± 0.6269 |
